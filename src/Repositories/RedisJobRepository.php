@@ -319,7 +319,7 @@ class RedisJobRepository implements JobRepository
     {
         $this->connection()->pipeline(function ($pipe) use ($connection, $queue, $payload) {
             $this->storeJobReference($pipe, 'recent_jobs', $payload);
-            $this->storeJobReference($pipe, 'pending_jobs', $payload);
+//            $this->storeJobReference($pipe, 'pending_jobs', $payload);
 
             $time = str_replace(',', '.', microtime(true));
 
